@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html[dir="rtl"] {
+  // font-family: "Tajawal", sans-serif;
+  font-family: "Cairo", sans-serif;
+}
+html[dir="ltr"] {
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  // background: linear-gradient(120deg, #fdfbfb 0%, #e5ebee 100%);
+  background: #ffffff;
+  // background: rgb(209, 210, 201);
+  width: 100%;
+  background-position: no-repeat;
+  background-size: cover;
+}
+
+// .header {
+//   background-repeat: round;
+//   background-size: cover;
+//   background-attachment: fixed;
+// }
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-white;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary;
+}
+
+.rs-slider-progress-bar {
+  @apply bg-secondaryLight h-[10px] #{!important};
+}
+.rs-slider-bar {
+  @apply h-[10px] #{!important};
+}
+.rs-slider-handle::before {
+  @apply border-secondaryLight w-[20px] h-[15px] top-[2px] #{!important};
+}
+
+.h1 {
+  font-weight: 900;
+}
+
+.h2 {
+  font-weight: 500;
+}
+
+.head {
+  font-size: 20px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.min-title {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+// -------- Fonts Media Query
+@media (min-width: 300px) {
+  .h1 {
+    font-size: 22px;
+  }
+  .h2 {
+    font-size: 20px;
+  }
+  .head {
+    font-size: 16px;
+  }
+}
+@media (min-width: 900px) {
+  .h1 {
+    font-size: 28px;
+  }
+  .h2 {
+    font-size: 40px;
+  }
+  .head {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1200px) {
+  .h1 {
+    font-size: 42px;
+  }
+  .h2 {
+    font-size: 48px;
+  }
+  .head {
+    font-size: 20px;
+  }
+}
+
+.main-btn {
+  @apply shadow-2xl min-w-[150px] px-4 md:px-8 h-[42px] bg-secondary border-2 border-primary text-primary text-[14px] md:text-[18px] flex items-center justify-center rounded-3xl uppercase;
+}
+
+.swiper-scrollbar {
+  @apply bg-secondaryLight  #{!important};
+}
+
+.swiper-scrollbar-drag {
+  // background-color: #122448 !important; // Set the color of the scrollbar drag handle
+  @apply bg-primary  #{!important};
+}
+
+.header {
+  // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  //   url("./assets/images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+// Date Picker resuite
+.rs-input-group:focus-within {
+  border-color: transparent !important;
+  outline: none !important;
+}
+.rs-picker:not(.rs-picker-disabled):hover {
+  border-color: transparent !important;
+}
+.rs-input-group {
+  border-color: transparent !important;
+}
+.rs-input:focus,
+.rs-input:hover:not(:disabled) {
+  border-color: transparent !important;
+}
+
+.rs-calendar-table-cell-selected .rs-calendar-table-cell-content {
+  @apply bg-secondaryLight  #{!important};
+}
+
+.rs-input-group input.rs-input ~ .rs-input-group-addon,
+.rs-input-group .rs-form-control-wrapper ~ .rs-input-group-addon {
+  cursor: pointer;
+}
+
+// radio Group input
+.rs-radio.rs-radio-checked .rs-radio-inner::before {
+  @apply bg-secondaryLight  #{!important};
+}
+
+// rsuite table
+.rs-table-hover .rs-table-row:not(.rs-table-row-header):hover,
+.rs-table-hover .rs-table-row:hover .rs-table-cell-group,
+.rs-table-hover .rs-table-row:hover .rs-table-cell {
+  @apply bg-secondaryLight bg-opacity-10  #{!important};
+}
+
+// rsuite  search modal
+.rs-modal-backdrop {
+  @apply md:hidden #{!important};
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: #e2e1e1bb;
+  width: 40px;
+  height: 48px;
+  @apply hidden sm:block
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  color: black;
+  font-weight: 900;
+  font-size: 15px !important;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-primary h-1 w-6 rounded-md  #{!important};
+}
+
+.swiper-pagination-bullet-active {
+  width: 56px !important;
+}
