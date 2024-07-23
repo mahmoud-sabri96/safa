@@ -8,7 +8,7 @@ const Homepage = () => {
   // ---- JSX Code ----
   return (
     <>
-     HOME
+      HOME
     </>
   )
 }
