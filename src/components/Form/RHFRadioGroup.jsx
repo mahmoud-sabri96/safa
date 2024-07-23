@@ -2,15 +2,14 @@
 import { useFormContext, Controller } from "react-hook-form";
 // rsuite
 import { Radio, RadioGroup } from "rsuite"
-// Locales
-import useLocales from "../../locales/useLocales";
+
 // --------------------------------------------------------------
 
 const RHFRadioGroup = ({ name, label, placeholder, options, ...other }) => {
 
     const { control } = useFormContext();
 
-    const { translate } = useLocales()
+
 
     // ----- JSX Code --------
     return (
@@ -40,7 +39,7 @@ const RHFRadioGroup = ({ name, label, placeholder, options, ...other }) => {
                                         key={option?.value}
                                         value={option?.value}
                                     >
-                                        {translate(option?.name)}
+                                        {option?.name}
                                     </Radio>
                                 )
                             }

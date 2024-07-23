@@ -1,15 +1,11 @@
 import { useFormContext, Controller } from "react-hook-form";
-// Locales
-import useLocales from "../../locales/useLocales";
+
 // --------------------------------------------------------------
 
 export default function RHFInput({ name, label, endIcon, placeholder, ...other }) {
 
     const { control } = useFormContext();
 
-    const { currentLang } = useLocales()
-
-    const dir = currentLang?.value === 'ar' ? "rtl" : 'ltr'
 
     // ----- JSX Code ------
     return (
@@ -34,7 +30,7 @@ export default function RHFInput({ name, label, endIcon, placeholder, ...other }
                         />
 
                         {endIcon &&
-                            <span className={`absolute top-[50%] translate-y-[-50%] ${dir === 'rtl' ? 'left-4' : 'right-4'} `}>
+                            <span className={`absolute top-[50%] translate-y-[-50%]  left-4} `}>
                                 {endIcon}
                             </span>
 
