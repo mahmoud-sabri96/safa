@@ -14,14 +14,18 @@ const rootPersistConfig = {
     whitelist: [],
 };
 
-
-
-
+const settingsPersistConfig = {
+    key: "settings",
+    storage,
+    keyPrefix: "redux-",
+    whitelist: ['clientInfo'],
+};
 
 
 const rootReducer = combineReducers({
     // cart: persistReducer(cartPersistConfig, cartReducer),
-    settings: settingsReducer,
+    settings: persistReducer(settingsPersistConfig, settingsReducer),
+    // settings: settingsReducer,
 });
 
 export { rootPersistConfig, rootReducer };

@@ -1,46 +1,37 @@
 // Slice
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 // Services
-import { contactUs, getSettings } from "../services/settings_services";
+import { registerNewClient } from "../services/settings_services";
 import { successToast } from "../../utils/toastMessage";
 // -----------------------------------------------------------------------
 
 const slice = createSlice({
     name: "settings",
     initialState: {
-        isLoadingSettings: false,
-        settings: {},
-        isLoadingContact:false,
+        clientInfo: {},
+        registerIsSucessful: false,
+        isLoadingRegisterNewClient: false,
     },
 
     reducers: {
+        setClientInfo: (state, action) => {
+            state.clientInfo = { ...current(state)?.clientInfo, ...action?.payload }
+        }
     },
 
     extraReducers: (builder) => {
-        // settings
+        // Register New Client
         builder
-            .addCase(getSettings.fulfilled, (state, action) => {
-                state.isLoadingSettings = false;
-                state.settings = action.payload.data
+            .addCase(registerNewClient.fulfilled, (state, action) => {
+                state.isLoadingRegisterNewClient = false;
+                state.registerIsSucessful = true;
+                state.clientInfo = {}
             })
-            .addCase(getSettings.pending, (state) => {
-                state.isLoadingSettings = true;
+            .addCase(registerNewClient.pending, (state) => {
+                state.isLoadingRegisterNewClient = true;
             })
-            .addCase(getSettings.rejected, (state) => {
-                state.isLoadingSettings = false;
-            });
-
-        // Contact us
-        builder
-            .addCase(contactUs.fulfilled, (state,action) => {
-                state.isLoadingContact = false;
-                successToast(action?.payload?.message)
-            })
-            .addCase(contactUs.pending, (state) => {
-                state.isLoadingContact = true;
-            })
-            .addCase(contactUs.rejected, (state) => {
-                state.isLoadingContact = false;
+            .addCase(registerNewClient.rejected, (state) => {
+                state.isLoadingRegisterNewClient = false;
             });
     },
 });
@@ -49,5 +40,6 @@ const slice = createSlice({
 export default slice.reducer;
 
 // Actions
-// export const {
-// } = slice.actions;
+export const {
+    setClientInfo
+} = slice.actions;

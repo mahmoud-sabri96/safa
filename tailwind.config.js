@@ -20,7 +20,7 @@ export default withMT({
       '2xl': '1280px',
     },
     colors: {
-      primary: "#6EB44E",
+      primary: "#1777fb",
       secondary: "#F1F8ED",
       secondaryLight: "#F1F8ED",
       black: "#121212",

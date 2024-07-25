@@ -10,7 +10,7 @@ import Cookies from "js-cookie";
 const access_token = Cookies.get('access_token')
 
 const axiosInstance = axios.create({
-    baseURL: "https://dashboard.tamrah-one.com/",
+    baseURL: "https://id.safav2.io.safavisa.com",
     headers: {
         API_SECRET_KEY: 'TamrahEcommerce@123',
         Authorization: `Bearer ${access_token}`
@@ -20,14 +20,6 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.response.use(
     (response) => {
-        // if (response?.status === 200 && response?.data?.status === true) {
-        //     // successToast(response?.data?.message); 
-        //     successToast('Sucessfull '); 
-        // }
-        // if (response?.status === 200 && response?.data?.status === false) {
-        //     // errorToast(response?.data?.message);
-        //     errorToast('Something went wrong');
-        // }
         return response?.data
     },
     (error) => {

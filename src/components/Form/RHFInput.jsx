@@ -14,7 +14,7 @@ export default function RHFInput({ name, label, endIcon, placeholder, ...other }
             control={control}
             render={({ field, fieldState: { error:fieldError } }) => (
                 <>
-                    <label className="text-sm sm:text-lg px-2 block text-primary mb-2 font-[500]">
+                    <label className="text-sm sm:text-lg px-2 block mb-2 font-[600]">
                         {label}
                     </label>
                     <div className="relative">
@@ -30,7 +30,7 @@ export default function RHFInput({ name, label, endIcon, placeholder, ...other }
                         />
 
                         {endIcon &&
-                            <span className={`absolute top-[50%] translate-y-[-50%]  left-4} `}>
+                            <span className={`absolute top-[50%]  right-2 translate-y-[-50%]  } `}>
                                 {endIcon}
                             </span>
 
